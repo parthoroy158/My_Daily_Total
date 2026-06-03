@@ -74,16 +74,16 @@ function SuccessBanner({ visible, amount, itemName, personName, color }) {
     return (
         <Animated.View
             style={[
-                styles.banner,
+                styles.banner, { marginTop: 30 },
                 { transform: [{ translateY: slideY }], opacity, borderLeftColor: color },
             ]}
             pointerEvents="none"
         >
-            <View style={[styles.bannerIcon, { backgroundColor: color + '22' }]}>
+            <View style={[styles.bannerIcon, { backgroundColor: COLORS.green }]}>
                 <Text style={{ fontSize: 20 }}>✓</Text>
             </View>
             <View style={styles.bannerText}>
-                <Text style={styles.bannerTitle}>₹{amount} added!</Text>
+                <Text style={styles.bannerTitle }>₹{amount} added!</Text>
                 <Text style={styles.bannerSub}>{itemName} · {personName}</Text>
             </View>
         </Animated.View>
@@ -227,11 +227,11 @@ export default function HomeScreen() {
         setTimeout(() => setBannerVisible(true), 50); // re-trigger if already showing
 
         // 3. Toast (existing)
-        Toast.show({
-            type: 'success',
-            text1: `₹${amt} added`,
-            text2: `${itm} • ${nmName}`,
-        });
+        // Toast.show({
+        //     type: 'success',
+        //     text1: `₹${amt} added`,
+        //     text2: `${itm} • ${nmName}`,
+        // });
 
         // 4. Android native toast as extra confirmation
         if (Platform.OS === 'android') {
@@ -320,7 +320,7 @@ export default function HomeScreen() {
                                     <Text style={styles.heading}>Daily Total</Text>
                                     <Text style={styles.subHeading}>Founder of কিনুন</Text>
                                 </View>
-                                <TouchableOpacity onPress={fetchEntries} style={styles.refreshBtn}>
+                                <TouchableOpacity onPress={fetchEntries} style={[styles.refreshBtn, { marginTop: 30 }]}>
                                     <Text style={styles.refreshIcon}>↻</Text>
                                 </TouchableOpacity>
                             </View>
@@ -514,7 +514,7 @@ const styles = StyleSheet.create({
 
     // ── Header ──
     header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: 24, marginBottom: 22 },
-    appTag: { fontSize: 11, color: COLORS.accent, letterSpacing: 3, fontWeight: '700', marginBottom: 6 },
+    appTag: { fontSize: 11, color: COLORS.accent, letterSpacing: 3, fontWeight: '700', marginBottom: 4 ,marginTop: 20},
     heading: { fontSize: 38, fontWeight: '800', color: COLORS.white, letterSpacing: -1 },
     subHeading: { fontSize: 14, color: COLORS.muted, marginTop: 3, fontWeight: '500' },
     refreshBtn: { width: 42, height: 42, borderRadius: 14, backgroundColor: COLORS.surfaceHigh, borderWidth: 1, borderColor: COLORS.border, justifyContent: 'center', alignItems: 'center', marginTop: 6 },

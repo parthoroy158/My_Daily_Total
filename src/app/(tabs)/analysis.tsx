@@ -301,8 +301,8 @@ export default function AnalysisScreen() {
             <Text style={s.appTag}>INSIGHTS</Text>
             <Text style={s.heading}>Analysis</Text>
           </View>
-          <TouchableOpacity onPress={fetchData} style={s.refreshBtn}>
-            <Text style={s.refreshIcon}>↻</Text>
+          <TouchableOpacity onPress={fetchData} style={[s.refreshBtn, { marginTop: 30 }]}>
+            <Text style={[s.refreshIcon]}>↻</Text>
           </TouchableOpacity>
         </View>
 
@@ -449,7 +449,7 @@ const s = StyleSheet.create({
   loadingText:  { color: COLORS.muted, fontSize: 14 },
 
   header:       { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: 24, marginBottom: 18 },
-  appTag:       { fontSize: 11, color: COLORS.accent, letterSpacing: 2, fontWeight: '700', marginBottom: 6 },
+  appTag:       { fontSize: 11, color: COLORS.accent, letterSpacing: 2, fontWeight: '700', marginBottom: 4, marginTop: 20 },
   heading:      { fontSize: 38, fontWeight: '800', color: COLORS.white, letterSpacing: -1 },
   refreshBtn:   { width: 42, height: 42, borderRadius: 14, backgroundColor: COLORS.surfaceHigh, borderWidth: 1, borderColor: COLORS.border, justifyContent: 'center', alignItems: 'center', marginTop: 6 },
   refreshIcon:  { fontSize: 20, color: COLORS.mutedLight },
