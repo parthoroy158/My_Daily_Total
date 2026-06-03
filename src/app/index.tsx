@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View ,ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
 import {
   BottomTabInset,
   MaxContentWidth,
@@ -11,6 +11,7 @@ export default function Home() {
     <ScrollView>
       <HomeScreen></HomeScreen>
     </ScrollView>
+
   );
 }
 
