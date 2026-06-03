@@ -11,7 +11,6 @@ export default function Home() {
     <ScrollView>
       <HomeScreen></HomeScreen>
     </ScrollView>
-
   );
 }
 

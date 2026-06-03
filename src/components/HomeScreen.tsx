@@ -1,6 +1,5 @@
 import DateTimePicker from '@react-native-community/datetimepicker';
 import React, { useEffect, useRef, useState } from 'react';
-import Toast from 'react-native-toast-message';
 import {
     ActivityIndicator,
     Animated,
@@ -17,6 +16,7 @@ import {
     Vibration,
     View,
 } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 
 const SUCCESS_VIBRATION = [0, 60, 80, 60, 80, 180];
@@ -236,7 +236,7 @@ export default function HomeScreen() {
         // 4. Android native toast as extra confirmation
         if (Platform.OS === 'android') {
             ToastAndroid.showWithGravity(
-                `✓  ₹${amt} saved!`,
+                `✓ ₹${amt} saved!`,
                 ToastAndroid.SHORT,
                 ToastAndroid.TOP,
             );
